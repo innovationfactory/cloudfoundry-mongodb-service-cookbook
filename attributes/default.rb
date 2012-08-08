@@ -12,6 +12,9 @@ default[:cloudfoundry_mongodb_service][:gateway][:log_level] = "info"
 # TODO (trotter): Find out what this does.
 default[:cloudfoundry_mongodb_service][:gateway][:node_timeout] = 30
 
+# Path to the mongod binary
+default[:cloudfoundry_mongodb_service][:node][:mongod_path] = "/usr/bin/mongod"
+
 # Where to write the mongodb service node's pid.
 default[:cloudfoundry_mongodb_service][:node][:pid_file] = File.join(node.cloudfoundry_common.pid_dir, "mongodb_node.pid")
 
