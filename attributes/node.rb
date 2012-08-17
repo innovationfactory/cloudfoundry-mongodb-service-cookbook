@@ -1,14 +1,8 @@
-# Where to write the mongodb service node's pid.
-default['cloudfoundry_mongodb_service']['node']['pid_file'] = File.join(node['cloudfoundry_common']['pid_dir'], "mongodb_node.pid")
-
 # Where to write the mongodb service node's logs.
-default['cloudfoundry_mongodb_service']['node']['log_file'] = File.join(node['cloudfoundry_common']['log_dir'], "mongodb_node.log")
-
-# Where to write the mongodb service node's logs.
-default['cloudfoundry_mongodb_service']['node']['db_logs_dir'] = File.join(node['cloudfoundry_common']['log_dir'], "mongodb")
+default['cloudfoundry_mongodb_service']['node']['db_logs_dir'] = File.join(node['cloudfoundry']['log_dir'], "mongodb")
 
 # Base directory for instance-specific data
-default['cloudfoundry_mongodb_service']['node']['base_dir'] = File.join(node['cloudfoundry_common']['services_dir'], "mongodb")
+default['cloudfoundry_mongodb_service']['node']['base_dir'] = File.join(node['cloudfoundry']['services_dir'], "mongodb")
 
 # Log level for the msyql service node.
 default['cloudfoundry_mongodb_service']['node']['log_level'] = "info"
