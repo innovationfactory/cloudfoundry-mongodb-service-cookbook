@@ -26,13 +26,14 @@ default['cloudfoundry_mongodb_service']['node']['index'] = 0
 # Maximum number of service instances for this node.
 default['cloudfoundry_mongodb_service']['node']['capacity'] = 200
 
+# Range of ports assigned to service instances on this node.
 default['cloudfoundry_mongodb_service']['node']['port_range']['first'] = 25001
 default['cloudfoundry_mongodb_service']['node']['port_range']['last'] = 45000
 
 # TODO (trotter): Find out what this does.
 default['cloudfoundry_mongodb_service']['node']['migration_nfs'] = "/mnt/migration"
 
-# TODO (trotter): Find out what this does.
+# Time limit (in seconds) for the node to complete the provisioning of a new instance.
 default['cloudfoundry_mongodb_service']['node']['op_time_limit'] = 6
 
 

@@ -25,6 +25,20 @@ Tested on:
 Attributes
 ==========
 
+# MongoDB gateway
+
+* `node['cloudfoundry_mongodb_service']['gateway']['log_level']` - Controls the amount of details that is logged. Defaults to `info`
+* `node['cloudfoundry_mongodb_service']['gateway']['node_timeout']` - How long (in seconds) should the gateway wait for an answer from a node on provisioning requests. Defaults to `30`
+* `node['cloudfoundry_mongodb_service']['gateway']['timeout']` - How long (in seconds) should the cloud_controller wait for an answer from the gateway. Defaults to `15`
+
+# MongoDB node
+
+* `node['cloudfoundry_mongodb_service']['node']['index']` - Unique index of the given service node. This *must* be unique among all nodes in a single cluster. Defaults to `0`
+* `node['cloudfoundry_mongodb_service']['node']['capacity']` - Maximum number of service instances for this node. Defaults to `200`
+* `node['cloudfoundry_mongodb_service']['node']['log_level']` - Controls the amount of details that is logged. Defaults to `info`
+* `node['cloudfoundry_mongodb_service']['node']['port_range']['first']` / `['last']` - Range of ports assigned to service instances on this node. Defaults to `25000-40000`
+* `node['cloudfoundry_mongodb_service']['node']['op_time_limit']` = Time limit (in seconds) for the node to complete the provisioning of a new instance. Defaults to `6`
+
 Usage
 =====
 

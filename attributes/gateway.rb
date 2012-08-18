@@ -17,11 +17,11 @@
 # limitations under the License.
 #
 
-# Log level for the msyql service gateway.
+# Log level for the mongodb service gateway.
 default['cloudfoundry_mongodb_service']['gateway']['log_level'] = "info"
 
-# TODO (trotter): Find out what this does.
+# How long (in seconds) should the gateway wait for an answer from a node on provisioning requests.
 default['cloudfoundry_mongodb_service']['gateway']['node_timeout'] = 30
 
-# TODO (andreacampi): Find out what this does.
+# How long (in seconds) should the cloud_controller wait for an answer from the gateway.
 default['cloudfoundry_mongodb_service']['gateway']['timeout'] = 15
