@@ -18,8 +18,8 @@
 # limitations under the License.
 #
 
-node.default['cloudfoundry_mongodb_service']['node']['base_dir'] = File.join(node['cloudfoundry']['services_dir'], "mongodb")
-node.default['cloudfoundry_mongodb_service']['node']['db_logs_dir'] = File.join(node['cloudfoundry']['log_dir'], "mongodb")
+node.default['cloudfoundry_mongodb_service']['node']['base_dir'] = File.join(node['cloudfoundry_common']['services_dir'], "mongodb")
+node.default['cloudfoundry_mongodb_service']['node']['db_logs_dir'] = File.join(node['cloudfoundry_common']['log_dir'], "mongodb")
 node.default['cloudfoundry_mongodb_service']['node']['instances_dir'] = "#{node['cloudfoundry_mongodb_service']['node']['base_dir']}/instances"
 
 include_recipe "mongodb::10gen_repo"
@@ -30,7 +30,7 @@ end
 
 %w[base_dir db_logs_dir instances_dir].each do |d|
   directory node['cloudfoundry_mongodb_service']['node'][d] do
-    owner node['cloudfoundry']['user']
+    owner node['cloudfoundry_common']['user']
     mode  "0755"
   end
 end

@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-include_attribute "cloudfoundry"
+include_attribute "cloudfoundry-common"
 
 default['cloudfoundry_mongodb_service']['supported_versions'] = {
         "1.8" => "1.8.5"
