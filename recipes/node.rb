@@ -22,6 +22,9 @@ node.default['cloudfoundry_mongodb_service']['node']['base_dir'] = File.join(nod
 node.default['cloudfoundry_mongodb_service']['node']['db_logs_dir'] = File.join(node['cloudfoundry_common']['log_dir'], "mongodb")
 node.default['cloudfoundry_mongodb_service']['node']['instances_dir'] = "#{node['cloudfoundry_mongodb_service']['node']['base_dir']}/instances"
 
+node.override['mongodb']['dbpath'] = node['cloudfoundry_mongodb_service']['node']['instances_dir']
+node.override['mongodb']['logpath'] = node['cloudfoundry_mongodb_service']['node']['db_logs_dir']
+
 include_recipe "mongodb::10gen_repo"
 
 %w[sqlite3 libsqlite3-ruby libsqlite3-dev].each do |p|
